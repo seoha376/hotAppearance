@@ -1,6 +1,6 @@
 :root {
-  color: #25151c;
-  background: #fffafa;
+  color: #fff8fb;
+  background: #120b16;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -15,8 +15,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 16% 18%, rgba(255, 77, 109, 0.08), transparent 24rem),
-    linear-gradient(135deg, #fffafa 0%, #fff 54%, #fff7f9 100%);
+    linear-gradient(125deg, rgba(255, 45, 95, 0.22) 0%, transparent 28%),
+    linear-gradient(235deg, rgba(0, 216, 255, 0.16) 0%, transparent 32%),
+    linear-gradient(180deg, #120b16 0%, #1b1020 46%, #110b17 100%);
 }
 
 a {
@@ -37,28 +38,29 @@ button {
   justify-content: space-between;
   gap: 24px;
   padding: 18px max(16px, calc((100vw - 1120px) / 2));
-  background: rgba(255, 248, 251, 0.84);
-  border-bottom: 1px solid rgba(109, 89, 98, 0.12);
+  background: rgba(18, 11, 22, 0.78);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(18px);
 }
 
 .brand {
-  color: #ff2d5f;
+  color: #ff6b8f;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
+  text-shadow: 0 0 22px rgba(255, 45, 95, 0.38);
 }
 
 .site-header nav {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  color: #6d5962;
+  color: #cbbbc6;
   font-size: 0.95rem;
   font-weight: 700;
 }
 
 .site-header nav a:hover {
-  color: #ff2d5f;
+  color: #6ee7ff;
 }
 
 .page-shell {
@@ -77,7 +79,7 @@ button {
 
 .eyebrow {
   margin: 0 0 12px;
-  color: #ff4d6d;
+  color: #6ee7ff;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -88,11 +90,14 @@ h1 {
   max-width: 760px;
   font-size: clamp(2.4rem, 8vw, 5.6rem);
   line-height: 0.95;
+  letter-spacing: 0;
+  color: #fff8fb;
+  text-shadow: 0 0 36px rgba(255, 45, 95, 0.2);
 }
 
 .hero-copy {
   max-width: 640px;
-  color: #6d5962;
+  color: #d8c8d4;
   font-size: 1.1rem;
   line-height: 1.7;
 }
@@ -107,10 +112,15 @@ h1 {
 .keyword-cloud-section,
 .content-card,
 .keyword-detail {
-  border: 1px solid rgba(255, 77, 109, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 18px 48px rgba(94, 42, 65, 0.08);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045)),
+    rgba(24, 14, 29, 0.82);
+  box-shadow:
+    0 22px 56px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
 }
 
 .keyword-cloud-section {
@@ -128,13 +138,14 @@ h1 {
 .keyword-detail h2 {
   margin: 0 0 12px;
   font-size: clamp(1.6rem, 4vw, 2.4rem);
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
+  color: #fff8fb;
 }
 
 .section-heading p,
 .content-card p,
 .keyword-detail p {
-  color: #6d5962;
+  color: #d8c8d4;
   line-height: 1.7;
 }
 
@@ -157,11 +168,11 @@ h1 {
 
 .segment-filter {
   cursor: pointer;
-  border: 1px solid rgba(255, 77, 109, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
   padding: 9px 13px;
-  color: #6d5962;
-  background: rgba(255, 255, 255, 0.82);
+  color: #d8c8d4;
+  background: rgba(255, 255, 255, 0.06);
   font-size: 0.94rem;
   font-weight: 900;
 }
@@ -169,10 +180,11 @@ h1 {
 .segment-filter:hover,
 .segment-filter:focus-visible,
 .segment-filter.is-active {
-  color: #ff2d5f;
+  color: #120b16;
   outline: none;
-  border-color: rgba(255, 45, 95, 0.38);
-  background: #fff0f4;
+  border-color: rgba(255, 255, 255, 0.28);
+  background: linear-gradient(135deg, #ff6b8f, #ffb86b);
+  box-shadow: 0 12px 30px rgba(255, 77, 109, 0.28);
 }
 
 .keyword-pill {
@@ -184,10 +196,10 @@ h1 {
   border: 0;
   border-radius: 999px;
   padding: 0.1em 0.28em;
-  color: #25151c;
+  color: #fff8fb;
   background: transparent;
   font-weight: 950;
-  letter-spacing: -0.08em;
+  letter-spacing: 0;
   line-height: 1.08;
   transition:
     color 160ms ease,
@@ -198,14 +210,16 @@ h1 {
 .keyword-pill:hover,
 .keyword-pill:focus-visible,
 .keyword-pill.is-active {
-  color: #ff2d5f;
+  color: #ff6b8f;
   outline: none;
-  text-shadow: 0 8px 22px rgba(255, 45, 95, 0.2);
+  text-shadow:
+    0 0 18px rgba(255, 45, 95, 0.44),
+    0 0 30px rgba(0, 216, 255, 0.18);
   transform: translateY(-1px);
 }
 
 .keyword-pill:focus-visible {
-  box-shadow: 0 0 0 4px rgba(255, 77, 109, 0.18);
+  box-shadow: 0 0 0 4px rgba(110, 231, 255, 0.2);
 }
 
 .trend-badge {
@@ -214,26 +228,26 @@ h1 {
   border-radius: 999px;
   padding: 0.18em 0.42em;
   font-size: max(0.68rem, 0.23em);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1;
-  color: #6d2438;
-  background: rgba(255, 240, 244, 0.9);
-  box-shadow: 0 8px 20px rgba(94, 42, 65, 0.08);
+  color: #ffe9ef;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 .trend-rising {
-  color: #d81b60;
-  background: #ffe8ef;
+  color: #120b16;
+  background: #7dffb2;
 }
 
 .trend-steady {
-  color: #6d5962;
-  background: #f5eef2;
+  color: #120b16;
+  background: #6ee7ff;
 }
 
 .trend-falling {
-  color: #7f56d9;
-  background: #f0eaff;
+  color: #120b16;
+  background: #d6a4ff;
 }
 
 .keyword-detail {
@@ -255,16 +269,16 @@ h1 {
 
 .metric-grid div {
   min-width: 0;
-  border: 1px solid rgba(109, 89, 98, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 12px;
   padding: 10px;
-  background: #fffafa;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .metric-grid dt {
   display: block;
   margin-bottom: 4px;
-  color: #8d737d;
+  color: #9beeff;
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -273,7 +287,7 @@ h1 {
 .metric-grid dd {
   display: block;
   margin: 0;
-  color: #25151c;
+  color: #fff8fb;
   font-size: 0.98rem;
   font-weight: 900;
   line-height: 1.15;
@@ -282,7 +296,7 @@ h1 {
 .detail-block {
   margin-top: 22px;
   padding-top: 18px;
-  border-top: 1px solid rgba(109, 89, 98, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .detail-block h3 {
@@ -304,33 +318,35 @@ h1 {
 .chips span {
   padding: 8px 10px;
   border-radius: 999px;
-  color: #6d2438;
-  background: #fff0f4;
+  color: #ffe9ef;
+  background: rgba(255, 107, 143, 0.16);
+  border: 1px solid rgba(255, 107, 143, 0.18);
   font-size: 0.9rem;
   font-weight: 800;
 }
 
 .detail-link {
   display: inline-flex;
-  border: 1px solid rgba(255, 45, 95, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   margin-top: 18px;
   border-radius: 999px;
   padding: 10px 14px;
-  color: #ff2d5f;
-  background: #fff0f4;
+  color: #120b16;
+  background: linear-gradient(135deg, #ff6b8f, #ffb86b);
   font-weight: 900;
+  box-shadow: 0 14px 32px rgba(255, 77, 109, 0.24);
 }
 
 .detail-link:hover,
 .detail-link:focus-visible {
   outline: none;
-  border-color: rgba(255, 45, 95, 0.42);
-  background: #ffe8ef;
+  border-color: rgba(110, 231, 255, 0.52);
+  background: linear-gradient(135deg, #6ee7ff, #7dffb2);
 }
 
 .safety-note {
   margin-top: 24px;
-  border-top: 1px solid rgba(109, 89, 98, 0.14);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 18px;
   font-size: 0.95rem;
 }
@@ -356,7 +372,7 @@ h1 {
   grid-template-columns: 42px minmax(0, 1fr) 56px;
   gap: 16px;
   align-items: start;
-  border-top: 1px solid rgba(109, 89, 98, 0.12);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding: 18px 0;
   background: transparent;
 }
@@ -365,6 +381,7 @@ h1 {
   display: block;
   margin-bottom: 6px;
   font-size: 1.24rem;
+  color: #fff8fb;
 }
 
 .ranking-list p {
@@ -373,14 +390,14 @@ h1 {
 
 .rank-index,
 .rank-score {
-  color: #8d737d;
+  color: #9beeff;
   font-size: 0.92rem;
   font-weight: 950;
 }
 
 .rank-score {
   justify-self: end;
-  color: #ff2d5f;
+  color: #ffb86b;
 }
 
 .article-grid,
@@ -403,7 +420,7 @@ h1 {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
   padding: 12px 0 42px;
-  color: #8d737d;
+  color: #b9a9b5;
   font-size: 0.92rem;
 }
 
@@ -412,12 +429,12 @@ h1 {
   flex-wrap: wrap;
   gap: 14px;
   margin-bottom: 12px;
-  color: #6d5962;
+  color: #d8c8d4;
   font-weight: 800;
 }
 
 .site-footer a:hover {
-  color: #ff2d5f;
+  color: #6ee7ff;
 }
 
 @media (max-width: 900px) {
@@ -462,7 +479,7 @@ h1 {
   }
 
   .keyword-pill {
-    letter-spacing: -0.1em;
+    letter-spacing: 0;
   }
 
   .metric-grid,
