@@ -15,9 +15,9 @@ describe("site content", () => {
   it("exposes clear navigation to required trust pages", () => {
     expect(navLinks).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ href: "/hotAppearance/about/", label: "소개" }),
-        expect.objectContaining({ href: "/hotAppearance/contact/", label: "문의" }),
-        expect.objectContaining({ href: "/hotAppearance/privacy/", label: "개인정보" })
+        expect.objectContaining({ href: "/hotAppearance/about/", label: "About" }),
+        expect.objectContaining({ href: "/hotAppearance/contact/", label: "Contact" }),
+        expect.objectContaining({ href: "/hotAppearance/privacy/", label: "Privacy" })
       ])
     );
   });

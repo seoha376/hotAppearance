@@ -30,15 +30,15 @@ function renderApp() {
   appRoot.innerHTML = `
     <header class="site-header">
       <a href="/hotAppearance/" class="brand">Hot Appearance</a>
-      <nav aria-label="주요 메뉴">${renderNav()}</nav>
+      <nav aria-label="Main navigation">${renderNav()}</nav>
     </header>
     <main class="page-shell">
       <section class="hero">
-        <p class="eyebrow">요즘 외모관리 지도</p>
-        <h1>핫한 키워드일수록 더 크게.</h1>
+        <p class="eyebrow">Appearance Trend Map</p>
+        <h1>Hotter Keywords. Bigger Signals.</h1>
         <p class="hero-copy">
-          PDRN부터 남자눈썹, 두피케어까지. 요새 자주 보이는 외모관리 키워드를
-          핫함 정도에 따라 한눈에 보여줍니다.
+          Track the appearance-care keywords people are paying attention to,
+          from PDRN to scalp care and men's grooming.
         </p>
       </section>
       <div class="main-layout">

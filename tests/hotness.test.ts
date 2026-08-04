@@ -12,15 +12,15 @@ describe("hotness utilities", () => {
     expect(getFontSizeRem(130)).toBe(getFontSizeRem(100));
   });
 
-  it("returns Korean display labels", () => {
-    expect(getHotnessLabel(95)).toBe("폭발적");
-    expect(getHotnessLabel(72)).toBe("상승중");
-    expect(getHotnessLabel(45)).toBe("관심");
+  it("returns English display labels", () => {
+    expect(getHotnessLabel(95)).toBe("Breakout");
+    expect(getHotnessLabel(72)).toBe("Trending");
+    expect(getHotnessLabel(45)).toBe("Watching");
   });
 
-  it("returns Korean trend state labels", () => {
-    expect(getTrendStateLabel("rising")).toBe("상승");
-    expect(getTrendStateLabel("steady")).toBe("유지");
-    expect(getTrendStateLabel("falling")).toBe("하락");
+  it("returns English trend state labels", () => {
+    expect(getTrendStateLabel("rising")).toBe("Rising");
+    expect(getTrendStateLabel("steady")).toBe("Steady");
+    expect(getTrendStateLabel("falling")).toBe("Cooling");
   });
 });

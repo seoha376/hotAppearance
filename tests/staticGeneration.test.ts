@@ -60,7 +60,7 @@ describe("static keyword page generation", () => {
     expect(html).toContain(`<meta property="og:type" content="article" />`);
     expect(html).toContain(keyword.label);
     expect(html).toContain(keyword.category);
-    expect(html).toContain(`핫함 ${keyword.hotness}점`);
+    expect(html).toContain(`Hotness ${keyword.hotness}`);
     expect(html).toContain(keyword.audienceSegment);
     expect(html).toContain(getTrendStateLabel(keyword.trendState));
     expect(html).toContain(keyword.summary);
@@ -69,6 +69,9 @@ describe("static keyword page generation", () => {
     for (const relatedSearch of keyword.relatedSearches) {
       expect(html).toContain(relatedSearch);
     }
+    expect(html).toContain("Why It Matters");
+    expect(html).toContain("Best For");
+    expect(html).toContain("Related Searches");
     expect(html).toContain("의료적 효과를 보장하지 않습니다");
   });
 

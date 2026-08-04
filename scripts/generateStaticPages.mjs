@@ -156,7 +156,7 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
   <body>
     <header class="site-header">
       <a href="${basePath}/" class="brand">Hot Appearance</a>
-      <nav aria-label="주요 메뉴">
+      <nav aria-label="Main navigation">
         ${navHtml}
       </nav>
     </header>
@@ -172,20 +172,20 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
         data-trend-state="${escapeHtml(keyword.trendState)}"
       >
         <p class="score">
-          핫함 ${escapeHtml(keyword.hotness)}점 · ${escapeHtml(audienceLabel)} ·
+          Hotness ${escapeHtml(keyword.hotness)} · ${escapeHtml(audienceLabel)} ·
           <span class="trend-badge trend-${escapeHtml(keyword.trendState)}">${escapeHtml(trendLabel)}</span>
         </p>
         <div class="detail-block">
-          <h2>왜 핫한지</h2>
+          <h2>Why It Matters</h2>
           <p>${escapeHtml(keyword.whyHot)}</p>
         </div>
         <div class="detail-block">
-          <h2>누가 보면 좋은지</h2>
+          <h2>Best For</h2>
           <p>${escapeHtml(keyword.audience)}</p>
         </div>
         <div class="detail-block">
-          <h2>관련 검색어</h2>
-          <div class="chips" aria-label="관련 검색어">
+          <h2>Related Searches</h2>
+          <div class="chips" aria-label="Related searches">
             ${keyword.relatedSearches.map((search) => `<span>${escapeHtml(search)}</span>`).join("")}
           </div>
         </div>
@@ -196,7 +196,7 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
       </article>
     </main>
     <footer class="site-footer">
-      <nav aria-label="하단 메뉴">
+      <nav aria-label="Footer navigation">
         ${footerNavHtml}
       </nav>
       <p>© 2026 Hot Appearance. Informational trend notes for appearance-care keywords.</p>

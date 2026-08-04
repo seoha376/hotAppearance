@@ -37,10 +37,10 @@ describe("keyword cloud", () => {
   it("renders audience segment filters", () => {
     const html = renderKeywordCloud(sampleKeywords, "mens-eyebrows", "all");
 
-    expect(html).toContain("전체");
-    expect(html).toContain("남자 관심");
-    expect(html).toContain("여자 관심");
-    expect(html).toContain("공통 관심");
+    expect(html).toContain("All");
+    expect(html).toContain("Men");
+    expect(html).toContain("Women");
+    expect(html).toContain("Shared");
   });
 
   it("filters keywords by audience segment and renders trend badges", () => {
@@ -48,6 +48,6 @@ describe("keyword cloud", () => {
 
     expect(html).toContain("남자눈썹");
     expect(html).not.toContain("퍼스널컬러");
-    expect(html).toContain("상승");
+    expect(html).toContain("Rising");
   });
 });

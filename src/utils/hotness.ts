@@ -14,24 +14,24 @@ export function getHotnessLabel(hotness: number): string {
   const value = clampHotness(hotness);
 
   if (value >= 88) {
-    return "폭발적";
+    return "Breakout";
   }
 
   if (value >= 65) {
-    return "상승중";
+    return "Trending";
   }
 
-  return "관심";
+  return "Watching";
 }
 
 export function getTrendStateLabel(trendState: "rising" | "steady" | "falling"): string {
   if (trendState === "rising") {
-    return "상승";
+    return "Rising";
   }
 
   if (trendState === "falling") {
-    return "하락";
+    return "Cooling";
   }
 
-  return "유지";
+  return "Steady";
 }

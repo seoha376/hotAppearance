@@ -13,11 +13,11 @@ export type ArticleGuide = {
 };
 
 export const navLinks: NavLink[] = [
-  { href: "/hotAppearance/", label: "홈" },
-  { href: "/hotAppearance/#ranking", label: "랭킹" },
-  { href: "/hotAppearance/about/", label: "소개" },
-  { href: "/hotAppearance/contact/", label: "문의" },
-  { href: "/hotAppearance/privacy/", label: "개인정보" }
+  { href: "/hotAppearance/", label: "Home" },
+  { href: "/hotAppearance/#ranking", label: "Ranking" },
+  { href: "/hotAppearance/about/", label: "About" },
+  { href: "/hotAppearance/contact/", label: "Contact" },
+  { href: "/hotAppearance/privacy/", label: "Privacy" }
 ];
 
 export const articleGuides: ArticleGuide[] = [

@@ -11,22 +11,25 @@ export function renderKeywordDetail(keyword: Keyword): string {
         <h2>${keyword.label}</h2>
       </div>
       <p class="score">
-        핫함 ${keyword.hotness}점 · ${getHotnessLabel(keyword.hotness)} ·
+        Hotness ${keyword.hotness} · ${getHotnessLabel(keyword.hotness)} ·
         ${getAudienceSegmentLabel(keyword.audienceSegment)} · ${getTrendStateLabel(keyword.trendState)}
       </p>
       <p>${keyword.summary}</p>
       <div class="detail-block">
-        <h3>왜 핫함?</h3>
+        <h3>Why It Matters</h3>
         <p>${keyword.whyHot}</p>
       </div>
       <div class="detail-block">
-        <h3>누가 보면 좋음?</h3>
+        <h3>Best For</h3>
         <p>${keyword.audience}</p>
       </div>
-      <div class="chips" aria-label="관련 검색어">
-        ${keyword.relatedSearches.map((search) => `<span>${search}</span>`).join("")}
+      <div class="detail-block">
+        <h3>Related Searches</h3>
+        <div class="chips" aria-label="Related searches">
+          ${keyword.relatedSearches.map((search) => `<span>${search}</span>`).join("")}
+        </div>
       </div>
-      <a class="detail-link" href="${getKeywordHref(keyword.id)}">상세 보기</a>
+      <a class="detail-link" href="${getKeywordHref(keyword.id)}">View Details</a>
     </aside>
   `;
 }

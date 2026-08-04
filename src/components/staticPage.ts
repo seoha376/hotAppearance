@@ -5,7 +5,7 @@ type StaticPageName = "about" | "contact" | "privacy";
 const pageCopy: Record<StaticPageName, { eyebrow: string; title: string; body: string[] }> = {
   about: {
     eyebrow: "About",
-    title: "Hot Appearance 소개",
+    title: "About Hot Appearance",
     body: [
       "Hot Appearance는 요즘 많이 언급되는 외모관리 키워드를 한눈에 볼 수 있게 정리하는 트렌드 맵입니다.",
       "첫 버전은 큐레이션 기반이지만, 데이터 구조는 향후 검색·커뮤니티·소셜 신호를 안전하게 요약해 반영할 수 있도록 설계했습니다.",
@@ -14,7 +14,7 @@ const pageCopy: Record<StaticPageName, { eyebrow: string; title: string; body: s
   },
   contact: {
     eyebrow: "Contact",
-    title: "문의",
+    title: "Contact",
     body: [
       "사이트 오류, 키워드 제안, 광고 및 제휴 문의는 이메일로 보낼 수 있습니다.",
       "문의 이메일: seoha376@gmail.com"
@@ -22,7 +22,7 @@ const pageCopy: Record<StaticPageName, { eyebrow: string; title: string; body: s
   },
   privacy: {
     eyebrow: "Privacy",
-    title: "개인정보처리방침",
+    title: "Privacy Policy",
     body: privacyParagraphs
   }
 };
@@ -34,7 +34,7 @@ export function renderNav(): string {
 export function renderFooter(): string {
   return `
     <footer class="site-footer">
-      <nav aria-label="하단 메뉴">${renderNav()}</nav>
+      <nav aria-label="Footer navigation">${renderNav()}</nav>
       <p>© 2026 Hot Appearance. Informational trend notes for appearance-care keywords.</p>
     </footer>
   `;
@@ -46,7 +46,7 @@ export function renderStaticPage(page: StaticPageName): string {
   return `
     <header class="site-header">
       <a href="/hotAppearance/" class="brand">Hot Appearance</a>
-      <nav aria-label="주요 메뉴">${renderNav()}</nav>
+      <nav aria-label="Main navigation">${renderNav()}</nav>
     </header>
     <main class="page-shell">
       <section class="hero compact-hero">
@@ -56,7 +56,7 @@ export function renderStaticPage(page: StaticPageName): string {
       <section class="content-card page-content">
         ${copy.body.map((paragraph) => `<p>${paragraph}</p>`).join("")}
       </section>
-      <section class="article-grid" aria-label="추천 가이드">
+      <section class="article-grid" aria-label="Recommended guides">
         ${articleGuides.slice(0, 3).map((article) => `
           <article class="content-card">
             <p class="eyebrow">${article.eyebrow}</p>

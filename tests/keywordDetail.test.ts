@@ -22,6 +22,9 @@ describe("keyword detail card", () => {
     const html = renderKeywordDetail(keyword);
 
     expect(html).toContain('href="/hotAppearance/keywords/pdrn/"');
-    expect(html).toContain("상세 보기");
+    expect(html).toContain("Why It Matters");
+    expect(html).toContain("Best For");
+    expect(html).toContain("Related Searches");
+    expect(html).toContain("View Details");
   });
 });

@@ -1,9 +1,9 @@
 import type { Keyword } from "../types";
 
 const audienceSegmentLabels: Record<Keyword["audienceSegment"], string> = {
-  men: "남자 관심",
-  women: "여자 관심",
-  common: "공통 관심"
+  men: "Men",
+  women: "Women",
+  common: "Shared"
 };
 
 export function getAudienceSegmentLabel(audienceSegment: Keyword["audienceSegment"]): string {
