@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getFontSizeRem, getHotnessLabel } from "../src/utils/hotness";
+import { getFontSizeRem, getHotnessLabel, getTrendStateLabel } from "../src/utils/hotness";
 
 describe("hotness utilities", () => {
   it("maps low and high hotness to visibly different font sizes", () => {
@@ -16,5 +16,11 @@ describe("hotness utilities", () => {
     expect(getHotnessLabel(95)).toBe("폭발적");
     expect(getHotnessLabel(72)).toBe("상승중");
     expect(getHotnessLabel(45)).toBe("관심");
+  });
+
+  it("returns Korean trend state labels", () => {
+    expect(getTrendStateLabel("rising")).toBe("상승");
+    expect(getTrendStateLabel("steady")).toBe("유지");
+    expect(getTrendStateLabel("falling")).toBe("하락");
   });
 });

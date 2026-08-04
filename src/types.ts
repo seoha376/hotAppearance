@@ -9,4 +9,6 @@ export type Keyword = {
   relatedSearches: string[];
   updatedAt: string;
   sourceType: "curated" | "collected";
+  audienceSegment: "men" | "women" | "common";
+  trendState: "rising" | "steady" | "falling";
 };

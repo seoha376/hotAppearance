@@ -11,7 +11,9 @@ export const keywords: Keyword[] = [
     audience: "성분을 보고 제품이나 시술 정보를 비교하려는 사람",
     relatedSearches: ["PDRN 크림", "PDRN 앰플", "PDRN 뜻"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "women",
+    trendState: "rising"
   },
   {
     id: "slow-aging",
@@ -23,7 +25,9 @@ export const keywords: Keyword[] = [
     audience: "20대 후반부터 피부 루틴을 정리하려는 사람",
     relatedSearches: ["슬로우에이징 루틴", "슬로우에이징 뜻", "노화관리 기초"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "rising"
   },
   {
     id: "exosome",
@@ -35,7 +39,9 @@ export const keywords: Keyword[] = [
     audience: "클리닉 트렌드를 가볍게 파악하려는 사람",
     relatedSearches: ["엑소좀 뜻", "엑소좀 관리", "엑소좀 화장품"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "women",
+    trendState: "rising"
   },
   {
     id: "skin-barrier",
@@ -47,7 +53,9 @@ export const keywords: Keyword[] = [
     audience: "피부가 쉽게 뒤집어져 루틴을 단순화하려는 사람",
     relatedSearches: ["피부장벽 회복", "장벽크림", "저자극 스킨케어"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "steady"
   },
   {
     id: "water-glow-skin",
@@ -59,7 +67,9 @@ export const keywords: Keyword[] = [
     audience: "칙칙함보다 맑고 촉촉한 인상을 원하는 사람",
     relatedSearches: ["물광피부 만드는법", "광채쿠션", "촉촉한 베이스"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "women",
+    trendState: "steady"
   },
   {
     id: "scalp-care",
@@ -71,7 +81,9 @@ export const keywords: Keyword[] = [
     audience: "머리 냄새, 유분, 볼륨 고민이 있는 사람",
     relatedSearches: ["두피 냄새", "두피 스케일링", "지성두피 샴푸"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "men",
+    trendState: "rising"
   },
   {
     id: "mens-eyebrows",
@@ -83,7 +95,9 @@ export const keywords: Keyword[] = [
     audience: "깔끔한 첫인상을 만들고 싶은 남성 입문자",
     relatedSearches: ["남자 눈썹 정리", "눈썹 문신", "남자 그루밍"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "men",
+    trendState: "rising"
   },
   {
     id: "pore-care",
@@ -95,7 +109,9 @@ export const keywords: Keyword[] = [
     audience: "피부결과 코 주변 피지가 신경 쓰이는 사람",
     relatedSearches: ["모공 줄이는법", "블랙헤드 관리", "피지관리"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "steady"
   },
   {
     id: "tone-up-sunscreen",
@@ -107,7 +123,9 @@ export const keywords: Keyword[] = [
     audience: "화장한 티는 줄이고 안색은 정리하고 싶은 사람",
     relatedSearches: ["톤업 선크림 추천", "남자 톤업", "자연스러운 피부보정"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "rising"
   },
   {
     id: "home-derma",
@@ -119,7 +137,9 @@ export const keywords: Keyword[] = [
     audience: "집에서 루틴을 업그레이드하고 싶은 사람",
     relatedSearches: ["홈더마 기기", "LED 마스크", "홈케어 피부관리"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "women",
+    trendState: "steady"
   },
   {
     id: "fragrance-layering",
@@ -131,7 +151,9 @@ export const keywords: Keyword[] = [
     audience: "은은하지만 기억나는 이미지를 만들고 싶은 사람",
     relatedSearches: ["향수 레이어링 조합", "살냄새 향수", "바디미스트"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "rising"
   },
   {
     id: "lip-care",
@@ -143,7 +165,9 @@ export const keywords: Keyword[] = [
     audience: "기초 외모관리를 빠르게 시작하려는 사람",
     relatedSearches: ["입술 각질", "립밤 추천", "입술색 관리"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "common",
+    trendState: "steady"
   },
   {
     id: "jawline-care",
@@ -155,7 +179,9 @@ export const keywords: Keyword[] = [
     audience: "사진에서 얼굴 라인이 신경 쓰이는 사람",
     relatedSearches: ["턱선 만드는법", "얼굴 붓기", "페이스라인 관리"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "men",
+    trendState: "steady"
   },
   {
     id: "personal-color",
@@ -167,7 +193,9 @@ export const keywords: Keyword[] = [
     audience: "옷과 메이크업 색 선택이 어려운 사람",
     relatedSearches: ["퍼스널컬러 자가진단", "웜톤 쿨톤", "나에게 어울리는 색"],
     updatedAt: "2026-08-05",
-    sourceType: "curated"
+    sourceType: "curated",
+    audienceSegment: "women",
+    trendState: "falling"
   }
 ];
 

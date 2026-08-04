@@ -19,6 +19,8 @@ describe("keyword data", () => {
       expect(keyword.relatedSearches.length).toBeGreaterThanOrEqual(2);
       expect(keyword.updatedAt).toMatch(/^2026-08-05$/);
       expect(keyword.sourceType).toBe("curated");
+      expect(["men", "women", "common"]).toContain(keyword.audienceSegment);
+      expect(["rising", "steady", "falling"]).toContain(keyword.trendState);
     }
   });
 

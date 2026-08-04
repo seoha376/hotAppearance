@@ -23,3 +23,15 @@ export function getHotnessLabel(hotness: number): string {
 
   return "관심";
 }
+
+export function getTrendStateLabel(trendState: "rising" | "steady" | "falling"): string {
+  if (trendState === "rising") {
+    return "상승";
+  }
+
+  if (trendState === "falling") {
+    return "하락";
+  }
+
+  return "유지";
+}
