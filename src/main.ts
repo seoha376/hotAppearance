@@ -2,6 +2,7 @@ import { renderInfoSections } from "./components/infoSections";
 import { renderKeywordCloud } from "./components/keywordCloud";
 import { renderKeywordDetail } from "./components/keywordDetail";
 import { renderRanking } from "./components/ranking";
+import { renderFooter, renderNav, renderStaticPage } from "./components/staticPage";
 import { getTopKeywords, keywords } from "./data/keywords";
 import "./styles.css";
 
@@ -13,20 +14,22 @@ if (!app) {
 
 const appRoot = app;
 let selectedKeywordId = getTopKeywords(1)[0]?.id ?? keywords[0].id;
+const staticPage = document.body.dataset.page;
 
 function getSelectedKeyword() {
   return keywords.find((keyword) => keyword.id === selectedKeywordId) ?? keywords[0];
 }
 
 function renderApp() {
+  if (staticPage === "about" || staticPage === "contact" || staticPage === "privacy") {
+    appRoot.innerHTML = renderStaticPage(staticPage);
+    return;
+  }
+
   appRoot.innerHTML = `
     <header class="site-header">
-      <a href="#" class="brand">Hot Appearance</a>
-      <nav aria-label="주요 메뉴">
-        <a href="#ranking">랭킹</a>
-        <a href="#about">소개</a>
-        <a href="#privacy">개인정보</a>
-      </nav>
+      <a href="/hotAppearance/" class="brand">Hot Appearance</a>
+      <nav aria-label="주요 메뉴">${renderNav()}</nav>
     </header>
     <main class="page-shell">
       <section class="hero">
@@ -46,9 +49,7 @@ function renderApp() {
       </div>
       ${renderInfoSections()}
     </main>
-    <footer class="site-footer">
-      <p>© 2026 Hot Appearance. Informational trend notes for appearance-care keywords.</p>
-    </footer>
+    ${renderFooter()}
   `;
 
   appRoot.querySelectorAll<HTMLButtonElement>("[data-keyword-id]").forEach((button) => {
