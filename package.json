@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate": "node scripts/generateStaticPages.mjs",
+    "predev": "npm run generate",
     "dev": "vite",
+    "prebuild": "npm run generate",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "pretest": "npm run generate",
     "test": "vitest run"
   },
   "dependencies": {

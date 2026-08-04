@@ -287,6 +287,35 @@ h1 {
   font-weight: 800;
 }
 
+.detail-link {
+  display: inline-flex;
+  margin-top: 18px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  color: white;
+  background: #ff2d5f;
+  font-weight: 900;
+}
+
+.detail-link:hover,
+.detail-link:focus-visible {
+  outline: none;
+  background: #d81b60;
+}
+
+.keyword-page .score {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.safety-note {
+  margin-top: 24px;
+  border-top: 1px solid rgba(109, 89, 98, 0.14);
+  padding-top: 18px;
+  font-size: 0.95rem;
+}
+
 .content-card {
   padding: 28px;
 }
