@@ -1,0 +1,9 @@
+{
+  "name": "Hot Appearance",
+  "short_name": "HotAppearance",
+  "description": "요즘 뜨는 외모관리 키워드를 핫함 정도에 따라 보여주는 트렌드 맵",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8fb",
+  "theme_color": "#ff4d6d"
+}
