@@ -37,7 +37,7 @@ export function renderInfoSections(): string {
       <article id="contact" class="content-card">
         <h2>Contact</h2>
         <p>
-          문의 이메일: contact@example.com
+          문의 이메일: seoha376@gmail.com
         </p>
       </article>
       <article id="privacy" class="content-card">
