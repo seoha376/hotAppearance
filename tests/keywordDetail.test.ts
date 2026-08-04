@@ -27,4 +27,16 @@ describe("keyword detail card", () => {
     expect(html).toContain("Related Searches");
     expect(html).toContain("View Details");
   });
+
+  it("renders hotness, audience, and trend as quiet metric rows", () => {
+    const html = renderKeywordDetail(keyword);
+
+    expect(html).toContain('class="metric-grid"');
+    expect(html).toContain("<dt>Hotness</dt>");
+    expect(html).toContain("<dd>96</dd>");
+    expect(html).toContain("<dt>Audience</dt>");
+    expect(html).toContain("<dd>Women</dd>");
+    expect(html).toContain("<dt>Trend</dt>");
+    expect(html).toContain("<dd>Rising</dd>");
+  });
 });

@@ -4,7 +4,7 @@ import { getFontSizeRem, getHotnessLabel, getTrendStateLabel } from "../src/util
 describe("hotness utilities", () => {
   it("maps low and high hotness to visibly different font sizes", () => {
     expect(getFontSizeRem(35)).toBeLessThan(getFontSizeRem(95));
-    expect(getFontSizeRem(95)).toBeGreaterThanOrEqual(3.4);
+    expect(getFontSizeRem(95)).toBeGreaterThanOrEqual(3);
   });
 
   it("clamps font sizes for out-of-range hotness values", () => {

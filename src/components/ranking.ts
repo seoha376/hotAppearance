@@ -8,13 +8,14 @@ export function renderRanking(keywords: Keyword[]): string {
       <ol class="ranking-list">
         ${keywords
           .map(
-            (keyword) => `
+            (keyword, index) => `
               <li>
+                <span class="rank-index">${String(index + 1).padStart(2, "0")}</span>
                 <div>
                   <strong>${keyword.label}</strong>
                   <p>${keyword.summary} ${keyword.whyHot}</p>
                 </div>
-                <span>${keyword.hotness}</span>
+                <span class="rank-score">${keyword.hotness}</span>
               </li>
             `
           )

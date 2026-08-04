@@ -60,7 +60,8 @@ describe("static keyword page generation", () => {
     expect(html).toContain(`<meta property="og:type" content="article" />`);
     expect(html).toContain(keyword.label);
     expect(html).toContain(keyword.category);
-    expect(html).toContain(`Hotness ${keyword.hotness}`);
+    expect(html).toContain("<dt>Hotness</dt>");
+    expect(html).toContain(`<dd>${keyword.hotness}</dd>`);
     expect(html).toContain(keyword.audienceSegment);
     expect(html).toContain(getTrendStateLabel(keyword.trendState));
     expect(html).toContain(keyword.summary);

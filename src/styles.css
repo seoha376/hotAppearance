@@ -1,6 +1,6 @@
 :root {
   color: #25151c;
-  background: #fff8fb;
+  background: #fffafa;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -15,8 +15,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 20% 20%, rgba(255, 77, 109, 0.16), transparent 28rem),
-    linear-gradient(135deg, #fff8fb 0%, #fff 48%, #fff0f4 100%);
+    radial-gradient(circle at 16% 18%, rgba(255, 77, 109, 0.08), transparent 24rem),
+    linear-gradient(135deg, #fffafa 0%, #fff 54%, #fff7f9 100%);
 }
 
 a {
@@ -38,7 +38,7 @@ button {
   gap: 24px;
   padding: 18px max(16px, calc((100vw - 1120px) / 2));
   background: rgba(255, 248, 251, 0.84);
-  border-bottom: 1px solid rgba(255, 77, 109, 0.12);
+  border-bottom: 1px solid rgba(109, 89, 98, 0.12);
   backdrop-filter: blur(18px);
 }
 
@@ -108,14 +108,14 @@ h1 {
 .content-card,
 .keyword-detail {
   border: 1px solid rgba(255, 77, 109, 0.14);
-  border-radius: 32px;
-  background: rgba(255, 255, 255, 0.72);
-  box-shadow: 0 24px 70px rgba(94, 42, 65, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 48px rgba(94, 42, 65, 0.08);
 }
 
 .keyword-cloud-section {
   min-height: 520px;
-  padding: 28px;
+  padding: 26px;
   overflow: hidden;
 }
 
@@ -143,9 +143,9 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 8px 18px;
-  min-height: 330px;
-  padding: 28px 0 8px;
+  gap: 6px 14px;
+  min-height: 300px;
+  padding: 24px 0 4px;
 }
 
 .segment-filters {
@@ -183,7 +183,7 @@ h1 {
   gap: 0.18em;
   border: 0;
   border-radius: 999px;
-  padding: 0.12em 0.32em;
+  padding: 0.1em 0.28em;
   color: #25151c;
   background: transparent;
   font-weight: 950;
@@ -200,8 +200,8 @@ h1 {
 .keyword-pill.is-active {
   color: #ff2d5f;
   outline: none;
-  text-shadow: 0 10px 28px rgba(255, 45, 95, 0.26);
-  transform: translateY(-2px) rotate(-1deg);
+  text-shadow: 0 8px 22px rgba(255, 45, 95, 0.2);
+  transform: translateY(-1px);
 }
 
 .keyword-pill:focus-visible {
@@ -239,21 +239,44 @@ h1 {
 .keyword-detail {
   position: sticky;
   top: 92px;
-  padding: 28px;
+  padding: 26px;
 }
 
 .keyword-detail h2 {
   font-size: clamp(2rem, 5vw, 3.2rem);
 }
 
-.score {
-  display: inline-flex;
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   margin: 0 0 18px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  color: #ff2d5f !important;
-  background: rgba(255, 77, 109, 0.1);
+}
+
+.metric-grid div {
+  min-width: 0;
+  border: 1px solid rgba(109, 89, 98, 0.12);
+  border-radius: 12px;
+  padding: 10px;
+  background: #fffafa;
+}
+
+.metric-grid dt {
+  display: block;
+  margin-bottom: 4px;
+  color: #8d737d;
+  font-size: 0.72rem;
   font-weight: 900;
+  text-transform: uppercase;
+}
+
+.metric-grid dd {
+  display: block;
+  margin: 0;
+  color: #25151c;
+  font-size: 0.98rem;
+  font-weight: 900;
+  line-height: 1.15;
 }
 
 .detail-block {
@@ -275,7 +298,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 22px;
+  margin-top: 10px;
 }
 
 .chips span {
@@ -289,24 +312,20 @@ h1 {
 
 .detail-link {
   display: inline-flex;
+  border: 1px solid rgba(255, 45, 95, 0.28);
   margin-top: 18px;
   border-radius: 999px;
   padding: 10px 14px;
-  color: white;
-  background: #ff2d5f;
+  color: #ff2d5f;
+  background: #fff0f4;
   font-weight: 900;
 }
 
 .detail-link:hover,
 .detail-link:focus-visible {
   outline: none;
-  background: #d81b60;
-}
-
-.keyword-page .score {
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
+  border-color: rgba(255, 45, 95, 0.42);
+  background: #ffe8ef;
 }
 
 .safety-note {
@@ -326,7 +345,7 @@ h1 {
 
 .ranking-list {
   display: grid;
-  gap: 14px;
+  gap: 0;
   margin: 24px 0 0;
   padding: 0;
   list-style: none;
@@ -334,12 +353,12 @@ h1 {
 
 .ranking-list li {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 42px minmax(0, 1fr) 56px;
   gap: 16px;
   align-items: start;
-  padding: 18px;
-  border-radius: 22px;
-  background: #fff8fb;
+  border-top: 1px solid rgba(109, 89, 98, 0.12);
+  padding: 18px 0;
+  background: transparent;
 }
 
 .ranking-list strong {
@@ -352,15 +371,16 @@ h1 {
   margin: 0;
 }
 
-.ranking-list span {
-  display: grid;
-  min-width: 48px;
-  min-height: 48px;
-  place-items: center;
-  border-radius: 50%;
-  color: white;
-  background: linear-gradient(135deg, #ff2d5f, #ff8a3d);
+.rank-index,
+.rank-score {
+  color: #8d737d;
+  font-size: 0.92rem;
   font-weight: 950;
+}
+
+.rank-score {
+  justify-self: end;
+  color: #ff2d5f;
 }
 
 .article-grid,
@@ -431,17 +451,26 @@ h1 {
   .keyword-cloud-section,
   .content-card,
   .keyword-detail {
-    border-radius: 24px;
+    border-radius: 14px;
     padding: 20px;
   }
 
   .keyword-cloud {
     justify-content: flex-start;
-    min-height: 260px;
+    min-height: 240px;
     gap: 4px 10px;
   }
 
   .keyword-pill {
     letter-spacing: -0.1em;
+  }
+
+  .metric-grid,
+  .ranking-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .rank-score {
+    justify-self: start;
   }
 }

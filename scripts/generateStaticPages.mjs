@@ -171,10 +171,20 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
         data-audience-segment="${escapeHtml(keyword.audienceSegment)}"
         data-trend-state="${escapeHtml(keyword.trendState)}"
       >
-        <p class="score">
-          Hotness ${escapeHtml(keyword.hotness)} · ${escapeHtml(audienceLabel)} ·
-          <span class="trend-badge trend-${escapeHtml(keyword.trendState)}">${escapeHtml(trendLabel)}</span>
-        </p>
+        <dl class="metric-grid" aria-label="Keyword signals">
+          <div>
+            <dt>Hotness</dt>
+            <dd>${escapeHtml(keyword.hotness)}</dd>
+          </div>
+          <div>
+            <dt>Audience</dt>
+            <dd>${escapeHtml(audienceLabel)}</dd>
+          </div>
+          <div>
+            <dt>Trend</dt>
+            <dd>${escapeHtml(trendLabel)}</dd>
+          </div>
+        </dl>
         <div class="detail-block">
           <h2>Why It Matters</h2>
           <p>${escapeHtml(keyword.whyHot)}</p>

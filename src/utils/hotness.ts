@@ -1,5 +1,5 @@
 const MIN_FONT_REM = 1.05;
-const MAX_FONT_REM = 3.8;
+const MAX_FONT_REM = 3.25;
 
 function clampHotness(hotness: number): number {
   return Math.min(100, Math.max(0, hotness));

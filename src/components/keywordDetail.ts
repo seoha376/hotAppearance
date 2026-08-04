@@ -10,10 +10,20 @@ export function renderKeywordDetail(keyword: Keyword): string {
         <p class="eyebrow">${keyword.category}</p>
         <h2>${keyword.label}</h2>
       </div>
-      <p class="score">
-        Hotness ${keyword.hotness} · ${getHotnessLabel(keyword.hotness)} ·
-        ${getAudienceSegmentLabel(keyword.audienceSegment)} · ${getTrendStateLabel(keyword.trendState)}
-      </p>
+      <dl class="metric-grid" aria-label="Keyword signals">
+        <div>
+          <dt>Hotness</dt>
+          <dd>${keyword.hotness}</dd>
+        </div>
+        <div>
+          <dt>Audience</dt>
+          <dd>${getAudienceSegmentLabel(keyword.audienceSegment)}</dd>
+        </div>
+        <div>
+          <dt>Trend</dt>
+          <dd>${getTrendStateLabel(keyword.trendState)}</dd>
+        </div>
+      </dl>
       <p>${keyword.summary}</p>
       <div class="detail-block">
         <h3>Why It Matters</h3>
