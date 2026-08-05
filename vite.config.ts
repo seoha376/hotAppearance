@@ -26,12 +26,33 @@ function normalizeSiteUrl(value: string | undefined): string {
   return withProtocol.replace(/\/+$/, "");
 }
 
+function renderGoogleAnalyticsTag(measurementId: string | undefined): string {
+  const trimmedMeasurementId = measurementId?.trim();
+
+  if (!trimmedMeasurementId) {
+    return "";
+  }
+
+  const encodedMeasurementId = encodeURIComponent(trimmedMeasurementId);
+  const serializedMeasurementId = JSON.stringify(trimmedMeasurementId);
+
+  return `
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${encodedMeasurementId}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", ${serializedMeasurementId});
+    </script>`;
+}
+
 export default defineConfig(({ mode }) => {
   const env = { ...loadEnv(mode, process.cwd(), ""), ...process.env };
   const basePath = normalizeBasePath(env.VITE_BASE_PATH);
   const siteUrl = normalizeSiteUrl(
     env.VITE_SITE_URL ?? env.VITE_VERCEL_PROJECT_PRODUCTION_URL
   );
+  const googleAnalyticsTag = renderGoogleAnalyticsTag(env.VITE_GA_MEASUREMENT_ID);
 
   return {
     base: `${basePath || ""}/`,
@@ -39,6 +60,18 @@ export default defineConfig(({ mode }) => {
       __BASE_PATH__: JSON.stringify(basePath),
       __SITE_URL__: JSON.stringify(siteUrl)
     },
+    plugins: [
+      {
+        name: "inject-google-analytics",
+        transformIndexHtml(html) {
+          if (!googleAnalyticsTag) {
+            return html;
+          }
+
+          return html.replace("</head>", `${googleAnalyticsTag}\n  </head>`);
+        }
+      }
+    ],
     build: {
       rollupOptions: {
         input: {
