@@ -73,7 +73,8 @@ describe("static keyword page generation", () => {
     expect(html).toContain("Why It Matters");
     expect(html).toContain("Best For");
     expect(html).toContain("Related Searches");
-    expect(html).toContain("의료적 효과를 보장하지 않습니다");
+    expect(html).toContain("정보성 트렌드 해설");
+    expect(html).toContain("의료적 조언이나 결과 보장을 제공하지 않으며");
   });
 
   it("rejects unsafe keyword ids before writing keyword pages", () => {

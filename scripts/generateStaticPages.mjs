@@ -200,8 +200,8 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
           </div>
         </div>
         <p class="safety-note">
-          이 페이지는 외모관리 키워드를 이해하기 위한 정보성 콘텐츠이며, 의료적 효과를 보장하지 않습니다.
-          시술이나 제품 선택은 개인 상태에 따라 달라질 수 있습니다.
+          이 페이지는 외모관리 키워드를 이해하기 위한 정보성 트렌드 해설입니다.
+          의료적 조언이나 결과 보장을 제공하지 않으며, 제품이나 시술 선택은 개인 상태에 따라 달라질 수 있습니다.
         </p>
       </article>
     </main>

@@ -39,6 +39,9 @@ export function renderKeywordDetail(keyword: Keyword): string {
           ${keyword.relatedSearches.map((search) => `<span>${search}</span>`).join("")}
         </div>
       </div>
+      <p class="safety-note">
+        This is an informational trend note. It does not guarantee beauty, medical, or treatment results.
+      </p>
       <a class="detail-link" href="${getKeywordHref(keyword.id)}">View Details</a>
     </aside>
   `;

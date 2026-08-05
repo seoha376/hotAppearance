@@ -16,4 +16,14 @@ describe("static publishing files", () => {
     expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/contact/");
     expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/privacy/");
   });
+
+  it("uses the GitHub Pages project path for root static asset links", () => {
+    const html = readFileSync("index.html", "utf8");
+
+    expect(html).toContain('href="/hotAppearance/site.webmanifest"');
+  });
+
+  it("does not publish ads.txt before an AdSense publisher id exists", () => {
+    expect(() => readFileSync("public/ads.txt", "utf8")).toThrow();
+  });
 });
