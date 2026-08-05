@@ -1,3 +1,4 @@
+import { inject } from "@vercel/analytics";
 import { renderInfoSections } from "./components/infoSections";
 import { type AudienceFilter, renderKeywordCloud } from "./components/keywordCloud";
 import { renderKeywordDetail } from "./components/keywordDetail";
@@ -6,6 +7,9 @@ import { renderFooter, renderNav, renderStaticPage } from "./components/staticPa
 import { navLinks } from "./content/siteContent";
 import { getTopKeywords, keywords } from "./data/keywords";
 import "./styles.css";
+
+// Initialize Vercel Web Analytics
+inject();
 
 const app = document.querySelector<HTMLDivElement>("#app");
 
