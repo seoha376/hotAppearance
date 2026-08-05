@@ -5,22 +5,22 @@ describe("static publishing files", () => {
   it("declares sitemap location in robots.txt", () => {
     const robots = readFileSync("public/robots.txt", "utf8");
 
-    expect(robots).toContain("Sitemap: https://seoha376.github.io/hotAppearance/sitemap.xml");
+    expect(robots).toContain("Sitemap: https://hot-appearance.vercel.app/sitemap.xml");
   });
 
   it("lists required public pages in sitemap.xml", () => {
     const sitemap = readFileSync("public/sitemap.xml", "utf8");
 
-    expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/");
-    expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/about/");
-    expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/contact/");
-    expect(sitemap).toContain("https://seoha376.github.io/hotAppearance/privacy/");
+    expect(sitemap).toContain("https://hot-appearance.vercel.app/");
+    expect(sitemap).toContain("https://hot-appearance.vercel.app/about/");
+    expect(sitemap).toContain("https://hot-appearance.vercel.app/contact/");
+    expect(sitemap).toContain("https://hot-appearance.vercel.app/privacy/");
   });
 
-  it("uses the GitHub Pages project path for root static asset links", () => {
+  it("uses root static asset links for Vercel deployment", () => {
     const html = readFileSync("index.html", "utf8");
 
-    expect(html).toContain('href="/hotAppearance/site.webmanifest"');
+    expect(html).toContain('href="/site.webmanifest"');
   });
 
   it("does not publish ads.txt before an AdSense publisher id exists", () => {

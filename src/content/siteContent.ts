@@ -1,4 +1,22 @@
-export const SITE_URL = "https://seoha376.github.io/hotAppearance";
+import { BASE_PATH } from "../utils/routes";
+
+declare const __SITE_URL__: string | undefined;
+
+function normalizeSiteUrl(value: string | undefined): string {
+  const fallback = "https://hot-appearance.vercel.app";
+  const rawValue = value?.trim() || fallback;
+  const withProtocol = /^https?:\/\//.test(rawValue) ? rawValue : `https://${rawValue}`;
+
+  return withProtocol.replace(/\/+$/, "");
+}
+
+function sitePath(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
+
+export const SITE_URL = normalizeSiteUrl(
+  typeof __SITE_URL__ === "string" ? __SITE_URL__ : process.env.VITE_SITE_URL
+);
 
 export type NavLink = {
   href: string;
@@ -13,11 +31,11 @@ export type ArticleGuide = {
 };
 
 export const navLinks: NavLink[] = [
-  { href: "/hotAppearance/", label: "Home" },
-  { href: "/hotAppearance/#ranking", label: "Ranking" },
-  { href: "/hotAppearance/about/", label: "About" },
-  { href: "/hotAppearance/contact/", label: "Contact" },
-  { href: "/hotAppearance/privacy/", label: "Privacy" }
+  { href: sitePath("/"), label: "Home" },
+  { href: sitePath("/#ranking"), label: "Ranking" },
+  { href: sitePath("/about/"), label: "About" },
+  { href: sitePath("/contact/"), label: "Contact" },
+  { href: sitePath("/privacy/"), label: "Privacy" }
 ];
 
 export const articleGuides: ArticleGuide[] = [

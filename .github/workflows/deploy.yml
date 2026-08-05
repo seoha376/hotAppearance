@@ -40,6 +40,9 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_PATH: /hotAppearance
+          VITE_SITE_URL: https://seoha376.github.io/hotAppearance
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

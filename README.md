@@ -8,6 +8,15 @@
 - `npm run build`: production build
 - `npm test`: unit tests
 
+## Deployment
+
+The default production target is Vercel at the site root.
+
+- Default canonical URL: `https://hot-appearance.vercel.app`
+- Default base path: `/`
+- If Vercel assigns a different production URL, set `VITE_SITE_URL` in Vercel and redeploy.
+- Keep `VITE_BASE_PATH=/` for Vercel. The GitHub Pages workflow overrides this only for the legacy `/hotAppearance/` deployment.
+
 ## First Release
 
 The first release uses curated static keyword data. The keyword data shape is normalized so future versions can replace it with collected trend data.
@@ -18,7 +27,6 @@ The first release uses curated static keyword data. The keyword data shape is no
 - About, Contact, and Privacy Policy sections are present.
 - Medical or procedure-related copy avoids guaranteed-result claims.
 - Build output can be deployed to free static hosting.
-- The deployed canonical URL is `https://seoha376.github.io/hotAppearance/`.
-- This is a GitHub Pages project site under `/hotAppearance/`, so AdSense site verification should be checked carefully against the URL format Google accepts during application.
+- The AdSense application URL should be the root Vercel production URL, not the legacy GitHub Pages project path.
 - Do not add ad placeholders, "coming ad" labels, or `ads.txt` before an AdSense publisher ID is available.
-- If AdSense requests `ads.txt`, remember that crawlers usually check the domain root; a custom domain or user-site root may be needed for a project-page deployment.
+- If AdSense requests `ads.txt`, publish it at the active root domain after the publisher ID is available.

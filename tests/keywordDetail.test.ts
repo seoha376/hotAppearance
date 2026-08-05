@@ -21,7 +21,7 @@ describe("keyword detail card", () => {
   it("links to the generated GitHub Pages keyword detail page", () => {
     const html = renderKeywordDetail(keyword);
 
-    expect(html).toContain('href="/hotAppearance/keywords/pdrn/"');
+    expect(html).toContain('href="/keywords/pdrn/"');
     expect(html).toContain("Why It Matters");
     expect(html).toContain("Best For");
     expect(html).toContain("Related Searches");

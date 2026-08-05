@@ -1,4 +1,17 @@
-export const BASE_PATH = "/hotAppearance";
+declare const __BASE_PATH__: string | undefined;
+
+function normalizeBasePath(value: string | undefined): string {
+  const fallback = "/";
+  const rawValue = value?.trim() || fallback;
+  const withLeadingSlash = rawValue.startsWith("/") ? rawValue : `/${rawValue}`;
+  const withoutTrailingSlash = withLeadingSlash.replace(/\/+$/, "");
+
+  return withoutTrailingSlash === "" ? "" : withoutTrailingSlash;
+}
+
+export const BASE_PATH = normalizeBasePath(
+  typeof __BASE_PATH__ === "string" ? __BASE_PATH__ : process.env.VITE_BASE_PATH
+);
 
 const KEYWORD_ID_PATTERN = /^[a-z0-9-]+$/;
 

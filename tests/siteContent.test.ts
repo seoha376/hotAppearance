@@ -23,15 +23,15 @@ describe("site content", () => {
 
   it("exposes clear navigation to required trust pages", () => {
     expect(navLinks).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ href: "/hotAppearance/about/", label: "About" }),
-        expect.objectContaining({ href: "/hotAppearance/contact/", label: "Contact" }),
-        expect.objectContaining({ href: "/hotAppearance/privacy/", label: "Privacy" })
+        expect.arrayContaining([
+        expect.objectContaining({ href: "/about/", label: "About" }),
+        expect.objectContaining({ href: "/contact/", label: "Contact" }),
+        expect.objectContaining({ href: "/privacy/", label: "Privacy" })
       ])
     );
   });
 
-  it("uses the deployed GitHub Pages URL as canonical site URL", () => {
-    expect(SITE_URL).toBe("https://seoha376.github.io/hotAppearance");
+  it("uses the Vercel production URL as canonical site URL", () => {
+    expect(SITE_URL).toBe("https://hot-appearance.vercel.app");
   });
 });

@@ -126,6 +126,13 @@ ${urls.map((url) => `  <url>\n    <loc>${escapeHtml(url)}</loc>\n  </url>`).join
 `;
 }
 
+function renderRobots({ siteUrl }) {
+  return `User-agent: *
+Allow: /
+Sitemap: ${normalizeSiteUrl(siteUrl)}/sitemap.xml
+`;
+}
+
 function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, getTrendStateLabel, keyword, navLinks, siteUrl }) {
   const canonicalUrl = absoluteUrl(siteUrl, getKeywordPath(keyword.id));
   const title = `${keyword.label} | Hot Appearance 키워드 상세`;
@@ -253,9 +260,11 @@ export function generateStaticPages(options = {}) {
   } = projectData;
   const keywordsRoot = join(outputRoot, "keywords");
   const sitemapPath = join(outputRoot, "public", "sitemap.xml");
+  const robotsPath = join(outputRoot, "public", "robots.txt");
 
   ensurePathInside(outputRoot, keywordsRoot);
   ensurePathInside(outputRoot, sitemapPath);
+  ensurePathInside(outputRoot, robotsPath);
 
   rmSync(keywordsRoot, { recursive: true, force: true });
   mkdirSync(keywordsRoot, { recursive: true });
@@ -285,6 +294,7 @@ export function generateStaticPages(options = {}) {
   }
 
   writeFileSync(sitemapPath, renderSitemap({ getKeywordPath, keywords, siteUrl }), "utf8");
+  writeFileSync(robotsPath, renderRobots({ siteUrl }), "utf8");
 
   return {
     keywordCount: keywords.length,

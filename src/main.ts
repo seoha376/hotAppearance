@@ -3,6 +3,7 @@ import { type AudienceFilter, renderKeywordCloud } from "./components/keywordClo
 import { renderKeywordDetail } from "./components/keywordDetail";
 import { renderRanking } from "./components/ranking";
 import { renderFooter, renderNav, renderStaticPage } from "./components/staticPage";
+import { navLinks } from "./content/siteContent";
 import { getTopKeywords, keywords } from "./data/keywords";
 import "./styles.css";
 
@@ -22,6 +23,8 @@ function getSelectedKeyword() {
 }
 
 function renderApp() {
+  const homeHref = navLinks.find((link) => link.label === "Home")?.href ?? "/";
+
   if (staticPage === "about" || staticPage === "contact" || staticPage === "privacy") {
     appRoot.innerHTML = renderStaticPage(staticPage);
     return;
@@ -29,7 +32,7 @@ function renderApp() {
 
   appRoot.innerHTML = `
     <header class="site-header">
-      <a href="/hotAppearance/" class="brand">Hot Appearance</a>
+      <a href="${homeHref}" class="brand">Hot Appearance</a>
       <nav aria-label="Main navigation">${renderNav()}</nav>
     </header>
     <main class="page-shell">

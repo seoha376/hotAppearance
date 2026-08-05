@@ -42,10 +42,11 @@ export function renderFooter(): string {
 
 export function renderStaticPage(page: StaticPageName): string {
   const copy = pageCopy[page];
+  const homeHref = navLinks.find((link) => link.label === "Home")?.href ?? "/";
 
   return `
     <header class="site-header">
-      <a href="/hotAppearance/" class="brand">Hot Appearance</a>
+      <a href="${homeHref}" class="brand">Hot Appearance</a>
       <nav aria-label="Main navigation">${renderNav()}</nav>
     </header>
     <main class="page-shell">

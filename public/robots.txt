@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://seoha376.github.io/hotAppearance/sitemap.xml
+Sitemap: https://hot-appearance.vercel.app/sitemap.xml
