@@ -9,6 +9,8 @@ import { getAudienceSegmentLabel } from "../src/utils/labels";
 import { BASE_PATH, getKeywordPath, validateKeywordId } from "../src/utils/routes";
 import { generateStaticPages } from "../scripts/generateStaticPages.mjs";
 
+const ADSENSE_CLIENT_ID = "ca-pub-6882848839362046";
+
 function generateIntoTemp(): string {
   const outputRoot = mkdtempSync(join(tmpdir(), "hot-appearance-static-"));
   generateStaticPages({
@@ -58,6 +60,8 @@ describe("static keyword page generation", () => {
     expect(html).toContain(`<title>${keyword.label} | Hot Appearance 키워드 상세</title>`);
     expect(html).toContain(`<link rel="canonical" href="${SITE_URL}/keywords/${keyword.id}/" />`);
     expect(html).toContain(`<meta property="og:type" content="article" />`);
+    expect(html).toContain("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+    expect(html).toContain(`client=${ADSENSE_CLIENT_ID}`);
     expect(html).toContain(keyword.label);
     expect(html).toContain(keyword.category);
     expect(html).toContain("<dt>Hotness</dt>");

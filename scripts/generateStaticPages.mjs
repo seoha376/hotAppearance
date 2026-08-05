@@ -158,6 +158,11 @@ function renderKeywordPage({ basePath, getAudienceSegmentLabel, getKeywordPath, 
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <link rel="manifest" href="${basePath}/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6882848839362046"
+      crossorigin="anonymous"
+    ></script>
     <title>${escapeHtml(title)}</title>
   </head>
   <body>
